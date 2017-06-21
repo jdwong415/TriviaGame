@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+}
+
+#answers {
+  display: none;
+}
+
+#reset {
+  display: none;
+}
