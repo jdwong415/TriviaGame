@@ -22,7 +22,7 @@ $(document).ready(function() {
   var answers = ["Christy Matthewson", "Barry Bonds", "1989", "2010", "Madison Bumgarner", "Tim Lincecum", "Buster Posey", "Matt Cain"];
 
   var intervalID;
-  var time = 5;
+  var time = 20;
   var questionCount = 0;
   var correct = 0;
   var incorrect = 0;
@@ -52,6 +52,7 @@ $(document).ready(function() {
   function getResult() {
     clearInterval(intervalID);
     $("#answers").css("display", "none");
+    $("#logo").css("display", "block");
     if (resCorrect) {
       $("#question").html("<p>Correct!</p");
     }
@@ -80,7 +81,8 @@ $(document).ready(function() {
     resUnanswered = false;
     resCorrect = false;
     resIncorrect = false;
-    time = 5;
+    time = 20;
+    $("#logo").css("display", "none");
     $("#time").html("<p>Time Remaining: " + time + " Seconds</p>");
 
     $("#question").html("<p>" + questions[questionCount] + "</p>");
@@ -104,7 +106,8 @@ $(document).ready(function() {
 
   function endGame() {
     $("#reset").css("display", "block");
-    $("#question").html("Here are your final results:");
+    $("#logo").css("display", "none");
+    $("#question").html("<p>Here are your final results:</p>");
     $("#question").append("<p>Correct Answers: " + correct + "<p>");
     $("#question").append("<p>Incorrect Answers: " + incorrect + "<p>");
     $("#question").append("<p>Unanswered: " + unanswered + "<p>");
